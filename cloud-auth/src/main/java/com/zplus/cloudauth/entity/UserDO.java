@@ -9,6 +9,7 @@ import java.util.List;
 
 public class UserDO implements UserDetails
 {
+    private static final long serialVersionUID = -5055697825946270055L;
     private BigInteger id;
 
     private String username;

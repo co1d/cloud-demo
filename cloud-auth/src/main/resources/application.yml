@@ -1,5 +1,5 @@
 server:
-  port: 7001
+  port: 9081
 
 spring:
   application:
@@ -8,17 +8,17 @@ spring:
     allow-bean-definition-overriding: true
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/cloud_manager?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    url: jdbc:mysql://47.106.240.57:3306/cloud_manager?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
     username: zplus
     password: nopassword
   cloud:
     nacos:
       discovery:
-        server-addr: 127.0.0.1:8848
+        server-addr: 47.106.240.57:8848
   #redis 配置
   redis:
     database: 0
-    host: 127.0.0.1
+    host: 47.106.240.57
     password: Zfakepw&3090
     lettuce:
       pool:
@@ -52,7 +52,7 @@ dubbo:
 #  cloud:
 #    nacos:
 #      discovery:
-#        server-addr: 127.0.0.1:8848
+#        server-addr: 47.106.240.57:8848
 #dubbo:
 #  application:
 #    qos-enable: false

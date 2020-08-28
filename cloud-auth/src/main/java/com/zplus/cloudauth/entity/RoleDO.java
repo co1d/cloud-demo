@@ -16,7 +16,6 @@ public class RoleDO implements GrantedAuthority
         this.id=id;
     }
 
-
     @Override
     public String getAuthority()
     {

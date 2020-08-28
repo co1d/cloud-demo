@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zplus.cloudauth.RedisUtils;
 import com.zplus.cloudauth.entity.LoginVO;
 import com.zplus.cloudauth.entity.UserDO;
+import com.zplus.cloudauth.entity.UserVO;
 import com.zplus.cloudauth.service.UserService;
 import com.zplus.commonutils.ResponseEnum;
 import com.zplus.commonutils.Result;
@@ -62,8 +63,11 @@ public class UserController
             map.put("error", e);
             return map;
         }
+        ObjectMapper objectMapper=new ObjectMapper();
+        UserVO userVO;
+        userVO=objectMapper.convertValue(authen.getPrincipal(),UserVO.class);
         //注意这两个key都不能随便填，都是和客户端进行数据处理时进行对应的。
-        map.put("user", authen.getPrincipal());
+        map.put("user", userVO);
         // map.put("authorities", authen.getAuthorities());
         map.put("token", tokenStore.getAccessToken(authen).getValue());
         return map;
